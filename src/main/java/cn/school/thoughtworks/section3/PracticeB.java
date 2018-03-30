@@ -5,8 +5,14 @@ import java.util.Map;
 
 public class PracticeB {
     Map<String,Integer> createUpdatedCollection(Map<String,Integer> collectionA, Map<String,List<String>> object) {
-        //实现练习要求，并改写该行代码。
-
-        return null;
+        List<String> collectionB = object.get("value");
+        for (int i = 0; i < collectionB.size(); i++) {
+            if (collectionA.containsKey(collectionB.get(i))) {
+                int num = collectionA.get(collectionB.get(i));
+                int sub = num/3;
+                collectionA.put(collectionB.get(i),num - sub);
+            }
+        }
+        return collectionA;
     }
 }
